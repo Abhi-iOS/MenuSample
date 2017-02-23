@@ -10,26 +10,44 @@ import UIKit
 
 class MenuVC: UIViewController {
 
+    @IBOutlet weak var menuTableView: UITableView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        
+        self.automaticallyAdjustsScrollViewInsets = false
+        
+        let menuCellNib = UINib(nibName: "RowCell", bundle: nil)
+        menuTableView.register(menuCellNib, forCellReuseIdentifier: "RowCellID")
+        
+        menuTableView.delegate = self
+        menuTableView.dataSource = self
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+}
+
+//MARK: 
+extension MenuVC: UITableViewDelegate, UITableViewDataSource{
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int{
+        
+        return 6
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell{
+        
+        guard let menuCell = tableView.dequeueReusableCell(withIdentifier: "RowCellID", for: indexPath) as? RowCell else{ fatalError("Cell Not Found")
+        }
+        
+        return menuCell
     }
-    */
-
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        
+        return 70
+    }
+    
 }
