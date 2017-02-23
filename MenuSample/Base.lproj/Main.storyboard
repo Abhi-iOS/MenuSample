@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="6Pl-sU-RSe">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="py6-bv-qbC">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -20,7 +20,37 @@
                     <view key="view" contentMode="scaleToFill" id="Lih-lk-Dqu">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="j7S-dK-eg1">
+                                <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                                <color key="barTintColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <textAttributes key="titleTextAttributes">
+                                    <fontDescription key="fontDescription" name="Arial-BoldMT" family="Arial" pointSize="25"/>
+                                    <color key="textColor" red="0.99611967802047729" green="0.99239760637283325" blue="0.99586540460586548" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </textAttributes>
+                                <items>
+                                    <navigationItem title="Colors" id="NJp-Es-Exv">
+                                        <barButtonItem key="leftBarButtonItem" image="menu" style="plain" id="vg3-U2-shh">
+                                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="lF8-YM-wmb">
+                                                <rect key="frame" x="16" y="7" width="30" height="30"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <color key="tintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                <state key="normal" backgroundImage="menu">
+                                                    <color key="titleColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                    <color key="titleShadowColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                </state>
+                                            </button>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="j7S-dK-eg1" firstAttribute="leading" secondItem="Lih-lk-Dqu" secondAttribute="leading" id="Ay6-js-TYf"/>
+                            <constraint firstAttribute="trailing" secondItem="j7S-dK-eg1" secondAttribute="trailing" id="RqN-HW-CWM"/>
+                            <constraint firstItem="j7S-dK-eg1" firstAttribute="top" secondItem="mPo-gv-nKz" secondAttribute="bottom" id="qcN-GQ-RhY"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="COLORS" id="jHE-0e-Chl">
                         <barButtonItem key="leftBarButtonItem" style="plain" id="Acv-06-GK2">
@@ -37,36 +67,66 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="menuButton" destination="ng0-4G-LKG" id="EvV-IC-dUS"/>
+                        <outlet property="menuButton" destination="lF8-YM-wmb" id="AcJ-a5-NdF"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gvv-f1-TCd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1063.2" y="115.59220389805098"/>
+            <point key="canvasLocation" x="2002.4000000000001" y="115.59220389805098"/>
         </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="ti7-e4-ybJ">
+        <!--RedVC-->
+        <scene sceneID="NK2-6g-9HQ">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="6Pl-sU-RSe" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="GbM-ff-Rtp">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                        <color key="tintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                        <color key="barTintColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <textAttributes key="titleTextAttributes">
-                            <color key="textColor" red="0.99611967802047729" green="0.99239760637283325" blue="0.99586540460586548" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        </textAttributes>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="py6-bv-qbC" kind="relationship" relationship="rootViewController" id="Z6h-B7-uha"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="P8R-Ea-NzG" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <viewController storyboardIdentifier="RedVCID" id="OFb-m8-4nD" customClass="RedVC" customModule="MenuSample" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="K9C-8Z-BHV"/>
+                        <viewControllerLayoutGuide type="bottom" id="0yN-QL-sgy"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="dat-vj-I52">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="GVb-33-BmT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="124" y="115.59220389805098"/>
+            <point key="canvasLocation" x="2768" y="-257"/>
+        </scene>
+        <!--GreenVC-->
+        <scene sceneID="u2R-7r-ENB">
+            <objects>
+                <viewController storyboardIdentifier="GreenVCID" id="EZX-EF-29S" customClass="GreenVC" customModule="MenuSample" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="aWV-zD-TgP"/>
+                        <viewControllerLayoutGuide type="bottom" id="F7Q-vc-f14"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="dpq-Ng-MlP">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" red="0.025585921481251717" green="0.97763115167617798" blue="0.17029741406440735" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="TVh-BL-kXp" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2767" y="153"/>
+        </scene>
+        <!--BlueVC-->
+        <scene sceneID="2iL-8k-NVQ">
+            <objects>
+                <viewController storyboardIdentifier="BlueVCID" id="2wk-F4-yF0" customClass="BlueVC" customModule="MenuSample" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="NjF-sB-B0A"/>
+                        <viewControllerLayoutGuide type="bottom" id="5Pr-wl-dLg"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="wg5-R3-q9J">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="oBD-0J-RqZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2766" y="527"/>
         </scene>
         <!--MenuVC-->
         <scene sceneID="fVX-Pu-fwy">
@@ -88,9 +148,9 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="AiP-Fa-wmV" secondAttribute="trailing" id="MkV-vC-Oik"/>
-                            <constraint firstItem="c3p-of-088" firstAttribute="top" secondItem="AiP-Fa-wmV" secondAttribute="bottom" id="Xsu-zw-gpO"/>
-                            <constraint firstItem="AiP-Fa-wmV" firstAttribute="top" secondItem="xqG-zz-SgY" secondAttribute="bottom" id="a71-iS-idt"/>
+                            <constraint firstItem="c3p-of-088" firstAttribute="top" secondItem="AiP-Fa-wmV" secondAttribute="bottom" id="ZkX-EZ-j2H"/>
                             <constraint firstItem="AiP-Fa-wmV" firstAttribute="leading" secondItem="gXH-uc-x2A" secondAttribute="leading" id="kez-0g-qi3"/>
+                            <constraint firstItem="AiP-Fa-wmV" firstAttribute="top" secondItem="xqG-zz-SgY" secondAttribute="bottom" id="wcs-Aj-sFW"/>
                         </constraints>
                     </view>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
@@ -101,7 +161,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="H6R-M2-o6E" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="583" y="-136"/>
+            <point key="canvasLocation" x="1180" y="116"/>
         </scene>
     </scenes>
     <resources>

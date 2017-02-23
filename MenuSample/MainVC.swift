@@ -12,6 +12,8 @@ class MainVC: UIViewController {
     
     //MARK: properties
     var menuPage = MenuVC()
+    var displayPage = UIViewController()
+    
 
     //MARK: outlets
     @IBOutlet weak var menuButton: UIButton!
@@ -21,19 +23,34 @@ class MainVC: UIViewController {
         super.viewDidLoad()
         
         self.automaticallyAdjustsScrollViewInsets = false
-
-        // Do any additional setup after loading the view.
         menuButton.addTarget(self, action: #selector(menuButtonAction(_:)), for: .touchUpInside)
         
+        
         menuPage = self.storyboard?.instantiateViewController(withIdentifier: "MenuVCID") as! MenuVC
+
+        displayPage = self.storyboard?.instantiateViewController(withIdentifier: "RedVCID") as! RedVC
+
+    }
+    
+    override func viewWillLayoutSubviews() {
+        super.viewWillLayoutSubviews()
+        
+        self.addChildViewController(displayPage)
+        self.view.addSubview(displayPage.view)
+        
+        displayPage.view.frame = CGRect(x: 0,
+                                        y: 70,
+                                        width: self.view.frame.width,
+                                        height: self.view.frame.height)
+        self.menuButton.isSelected = false
+        
         self.addChildViewController(menuPage)
         self.view.addSubview(menuPage.view)
         menuPage.didMove(toParentViewController: self)
         menuPage.view.frame = CGRect(x: -(menuPage.view.frame.width),
-                                     y: 0,
+                                     y: 70,
                                      width: (self.view.frame.width)/2,
                                      height: (self.view.frame.height))
-
     }
 
 }
@@ -51,7 +68,7 @@ extension MainVC{
                            animations: {
                 
                             self.menuPage.view.frame = CGRect(x: 0,
-                                             y: 0,
+                                             y: 70,
                                              width: (self.view.frame.width)/2,
                                              height: (self.view.frame.height))
             }, completion: nil)
@@ -64,13 +81,22 @@ extension MainVC{
                            animations: {
                             
                             self.menuPage.view.frame = CGRect(x: -(self.menuPage.view.frame.width),
-                                                              y: 0,
+                                                              y: 70,
                                                               width: (self.view.frame.width)/2,
                                                               height: (self.view.frame.height))
             }, completion: nil)
 
             
         }
+    }
+    
+    
+    func changeDisplayPage(_ newPage: UIViewController){
+
+        displayPage.removeFromParentViewController()
+        self.displayPage = newPage
+        viewWillLayoutSubviews()
+        
     }
     
 }
