@@ -57,6 +57,7 @@ class MainVC: UIViewController {
 
 extension MainVC{
     
+    //Menu Button Action
     func menuButtonAction(_ button : UIButton){
         
         menuButton.isSelected = !menuButton.isSelected
@@ -85,12 +86,11 @@ extension MainVC{
                                                               width: (self.view.frame.width)/2,
                                                               height: (self.view.frame.height))
             }, completion: nil)
-
-            
+      
         }
     }
     
-    
+    //Change Display Page
     func changeDisplayPage(_ newPage: UIViewController){
 
         displayPage.removeFromParentViewController()

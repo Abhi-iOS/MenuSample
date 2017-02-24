@@ -60,17 +60,16 @@ extension MenuVC: UITableViewDelegate, UITableViewDataSource{
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
+        let parent = self.parent as! MainVC
+        
         switch indexPath.row {
         case 0: let displayPage = self.storyboard?.instantiateViewController(withIdentifier: "RedVCID") as! RedVC
-                let parent = self.parent as! MainVC
                 parent.changeDisplayPage(displayPage)
         
         case 1: let displayPage = self.storyboard?.instantiateViewController(withIdentifier: "GreenVCID") as! GreenVC
-                let parent = self.parent as! MainVC
                 parent.changeDisplayPage(displayPage)
             
         case 2: let displayPage = self.storyboard?.instantiateViewController(withIdentifier: "BlueVCID") as! BlueVC
-                let parent = self.parent as! MainVC
                 parent.changeDisplayPage(displayPage)
             
         default: print("default")
